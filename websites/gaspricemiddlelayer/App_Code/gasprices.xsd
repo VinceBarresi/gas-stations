@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="gasprices" targetNamespace="http://tempuri.org/gasprices.xsd" xmlns:mstns="http://tempuri.org/gasprices.xsd" xmlns="http://tempuri.org/gasprices.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="gasStationConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="gasStationConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.gasStationConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="gasTableAdapter" GeneratorDataComponentClassName="gasTableAdapter" Name="gas" UserDataComponentName="gasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="gasStationConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        g.gasID, g.stationID, g.gasTypeID, g.gasType, g.gasPrice, s.stationID AS Expr1, s.stationName, s.address, s.city, s.stationState, s.zipcode
+FROM            gas AS g INNER JOIN
+                         station AS s ON g.stationID = s.stationID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="gasID" DataSetColumn="gasID" />
+              <Mapping SourceColumn="stationID" DataSetColumn="stationID" />
+              <Mapping SourceColumn="gasTypeID" DataSetColumn="gasTypeID" />
+              <Mapping SourceColumn="gasType" DataSetColumn="gasType" />
+              <Mapping SourceColumn="gasPrice" DataSetColumn="gasPrice" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="stationName" DataSetColumn="stationName" />
+              <Mapping SourceColumn="address" DataSetColumn="address" />
+              <Mapping SourceColumn="city" DataSetColumn="city" />
+              <Mapping SourceColumn="stationState" DataSetColumn="stationState" />
+              <Mapping SourceColumn="zipcode" DataSetColumn="zipcode" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="gasprices" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="gasprices" msprop:Generator_UserDSName="gasprices">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="gas" msprop:Generator_TableClassName="gasDataTable" msprop:Generator_TableVarName="tablegas" msprop:Generator_RowChangedName="gasRowChanged" msprop:Generator_TablePropName="gas" msprop:Generator_RowDeletingName="gasRowDeleting" msprop:Generator_RowChangingName="gasRowChanging" msprop:Generator_RowEvHandlerName="gasRowChangeEventHandler" msprop:Generator_RowDeletedName="gasRowDeleted" msprop:Generator_RowClassName="gasRow" msprop:Generator_UserTableName="gas" msprop:Generator_RowEvArgName="gasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="gasID" msprop:Generator_ColumnVarNameInTable="columngasID" msprop:Generator_ColumnPropNameInRow="gasID" msprop:Generator_ColumnPropNameInTable="gasIDColumn" msprop:Generator_UserColumnName="gasID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="stationID" msprop:Generator_ColumnVarNameInTable="columnstationID" msprop:Generator_ColumnPropNameInRow="stationID" msprop:Generator_ColumnPropNameInTable="stationIDColumn" msprop:Generator_UserColumnName="stationID" type="xs:int" />
+              <xs:element name="gasTypeID" msprop:Generator_ColumnVarNameInTable="columngasTypeID" msprop:Generator_ColumnPropNameInRow="gasTypeID" msprop:Generator_ColumnPropNameInTable="gasTypeIDColumn" msprop:Generator_UserColumnName="gasTypeID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="gasType" msprop:Generator_ColumnVarNameInTable="columngasType" msprop:Generator_ColumnPropNameInRow="gasType" msprop:Generator_ColumnPropNameInTable="gasTypeColumn" msprop:Generator_UserColumnName="gasType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="gasPrice" msprop:Generator_ColumnVarNameInTable="columngasPrice" msprop:Generator_ColumnPropNameInRow="gasPrice" msprop:Generator_ColumnPropNameInTable="gasPriceColumn" msprop:Generator_UserColumnName="gasPrice" type="xs:double" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" />
+              <xs:element name="stationName" msprop:Generator_ColumnVarNameInTable="columnstationName" msprop:Generator_ColumnPropNameInRow="stationName" msprop:Generator_ColumnPropNameInTable="stationNameColumn" msprop:Generator_UserColumnName="stationName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="address" msprop:Generator_ColumnVarNameInTable="columnaddress" msprop:Generator_ColumnPropNameInRow="address" msprop:Generator_ColumnPropNameInTable="addressColumn" msprop:Generator_UserColumnName="address">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="city" msprop:Generator_ColumnVarNameInTable="columncity" msprop:Generator_ColumnPropNameInRow="city" msprop:Generator_ColumnPropNameInTable="cityColumn" msprop:Generator_UserColumnName="city">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="stationState" msprop:Generator_ColumnVarNameInTable="columnstationState" msprop:Generator_ColumnPropNameInRow="stationState" msprop:Generator_ColumnPropNameInTable="stationStateColumn" msprop:Generator_UserColumnName="stationState">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="zipcode" msprop:Generator_ColumnVarNameInTable="columnzipcode" msprop:Generator_ColumnPropNameInRow="zipcode" msprop:Generator_ColumnPropNameInTable="zipcodeColumn" msprop:Generator_UserColumnName="zipcode" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
